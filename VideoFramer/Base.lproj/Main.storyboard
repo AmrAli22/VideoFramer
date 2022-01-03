@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEq-Kf-2zG">
-                                <rect key="frame" x="10" y="602.5" width="394" height="30"/>
+                                <rect key="frame" x="10" y="602.5" width="394" height="45"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ed0-U3-Dcm"/>
+                                    <constraint firstAttribute="height" constant="45" id="ed0-U3-Dcm"/>
                                 </constraints>
                                 <state key="normal" title="Import Video">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -31,10 +31,10 @@
                                     <action selector="importVedioBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zno-wn-1YW"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z4o-ka-wTH">
-                                <rect key="frame" x="41.5" y="313.5" width="331" height="269"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z4o-ka-wTH">
+                                <rect key="frame" x="0.0" y="313.5" width="414" height="269"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mdV-nx-iSP">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WSd-uG-CDg">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -60,7 +60,7 @@
                             <constraint firstItem="z4o-ka-wTH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="URP-1c-mVd"/>
                             <constraint firstItem="z4o-ka-wTH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YBm-AV-oHs"/>
                             <constraint firstItem="kEq-Kf-2zG" firstAttribute="top" secondItem="z4o-ka-wTH" secondAttribute="bottom" constant="20" id="b3y-fi-pyI"/>
-                            <constraint firstItem="z4o-ka-wTH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="v0R-Nz-7cR"/>
+                            <constraint firstItem="z4o-ka-wTH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="v0R-Nz-7cR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kEq-Kf-2zG" secondAttribute="trailing" constant="10" id="xfb-47-jfs"/>
                         </constraints>
                     </view>

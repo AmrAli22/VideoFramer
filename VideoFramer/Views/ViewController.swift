@@ -8,34 +8,55 @@
 import UIKit
 import MobileCoreServices
 import AVFoundation
-import AssetsLibrary
+
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let imagePickerController = UIImagePickerController()
+    // MARK: - vedioPicker
+    let vedioPicker = UIImagePickerController()
     var videoURL : NSURL?
-
+    // MARK: - vedioDurationTimes
+    var firstTime = 0
+    var videoDuration  : Int?
+    var timesArray = [NSValue]()
+    // MARK: - vedioDurationTimes1
+    var imageCount : Int?
+    var images = [UIImage]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(FrameCell.self, forCellWithReuseIdentifier: "FrameCell")
-
+        collectionView.register(UINib(nibName: "FrameCell", bundle: nil), forCellWithReuseIdentifier: "FrameCell")
     }
 
     @IBAction func importVedioBtnPressed(_ sender: Any) {
-        imagePickerController.sourceType = .savedPhotosAlbum
-        imagePickerController.delegate = self
-        imagePickerController.mediaTypes = [kUTTypeMovie as String]
-        present(imagePickerController, animated: true, completion: nil)
+        emptyData()
+        vedioPicker.sourceType = .savedPhotosAlbum
+        vedioPicker.delegate = self
+        vedioPicker.mediaTypes = [kUTTypeMovie as String]
+        present(vedioPicker, animated: true, completion: nil)
     }
+    
+    func emptyData(){
+        imageCount = nil
+        images = [UIImage]()
+        timesArray = [NSValue]()
+        videoDuration = nil
+        firstTime = 0
+        videoURL = nil
+        collectionView.reloadData()
+    }
+    
 }
 
 extension ViewController {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? NSURL
-        imagePickerController.dismiss(animated: true, completion: nil)
+        guard let vedioUrl = videoURL else { return }
+        genrateImagesFromVideoUrl(url: vedioUrl)
+        vedioPicker.dismiss(animated: true, completion: nil)
     }
 }
