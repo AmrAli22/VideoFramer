@@ -41,6 +41,8 @@ extension ViewController {
             let OriginalImage = UIImage(cgImage: image!)
             let BlurredImage  = self.blurEffect(image: OriginalImage)
             self.images.append(BlurredImage)
+            UIImageWriteToSavedPhotosAlbum(BlurredImage, nil, nil, nil)
+
             if self.imageCount == self.images.count {
                 completion(true)
             }
