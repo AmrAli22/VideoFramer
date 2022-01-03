@@ -15,6 +15,9 @@
 		C5085DAE27837C8D008ECE3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5085DAC27837C8D008ECE3A /* LaunchScreen.storyboard */; };
 		C5085DB927837C8E008ECE3A /* VideoFramerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5085DB827837C8E008ECE3A /* VideoFramerTests.swift */; };
 		C5085DC427837C8E008ECE3A /* VideoFramerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5085DC327837C8E008ECE3A /* VideoFramerUITests.swift */; };
+		C5085DD527839431008ECE3A /* FrameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5085DD327839431008ECE3A /* FrameCell.swift */; };
+		C5085DD627839431008ECE3A /* FrameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5085DD427839431008ECE3A /* FrameCell.xib */; };
+		C5085DD8278394BD008ECE3A /* ViewController+CollectionDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5085DD7278394BD008ECE3A /* ViewController+CollectionDelegates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		C5085DBF27837C8E008ECE3A /* VideoFramerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoFramerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5085DC327837C8E008ECE3A /* VideoFramerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFramerUITests.swift; sourceTree = "<group>"; };
 		C5085DC527837C8E008ECE3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5085DD327839431008ECE3A /* FrameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameCell.swift; sourceTree = "<group>"; };
+		C5085DD427839431008ECE3A /* FrameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FrameCell.xib; sourceTree = "<group>"; };
+		C5085DD7278394BD008ECE3A /* ViewController+CollectionDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CollectionDelegates.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +105,9 @@
 		C5085DA027837C8A008ECE3A /* VideoFramer */ = {
 			isa = PBXGroup;
 			children = (
+				C5085DD1278393EF008ECE3A /* Views */,
 				C5085DA127837C8A008ECE3A /* AppDelegate.swift */,
 				C5085DA327837C8A008ECE3A /* SceneDelegate.swift */,
-				C5085DA527837C8A008ECE3A /* ViewController.swift */,
 				C5085DA727837C8A008ECE3A /* Main.storyboard */,
 				C5085DAA27837C8D008ECE3A /* Assets.xcassets */,
 				C5085DAC27837C8D008ECE3A /* LaunchScreen.storyboard */,
@@ -126,6 +132,25 @@
 				C5085DC527837C8E008ECE3A /* Info.plist */,
 			);
 			path = VideoFramerUITests;
+			sourceTree = "<group>";
+		};
+		C5085DD1278393EF008ECE3A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C5085DD227839402008ECE3A /* imageCell */,
+				C5085DA527837C8A008ECE3A /* ViewController.swift */,
+				C5085DD7278394BD008ECE3A /* ViewController+CollectionDelegates.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C5085DD227839402008ECE3A /* imageCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5085DD327839431008ECE3A /* FrameCell.swift */,
+				C5085DD427839431008ECE3A /* FrameCell.xib */,
+			);
+			path = imageCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5085DAE27837C8D008ECE3A /* LaunchScreen.storyboard in Resources */,
+				C5085DD627839431008ECE3A /* FrameCell.xib in Resources */,
 				C5085DAB27837C8D008ECE3A /* Assets.xcassets in Resources */,
 				C5085DA927837C8A008ECE3A /* Main.storyboard in Resources */,
 			);
@@ -259,7 +285,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5085DA627837C8A008ECE3A /* ViewController.swift in Sources */,
+				C5085DD527839431008ECE3A /* FrameCell.swift in Sources */,
 				C5085DA227837C8A008ECE3A /* AppDelegate.swift in Sources */,
+				C5085DD8278394BD008ECE3A /* ViewController+CollectionDelegates.swift in Sources */,
 				C5085DA427837C8A008ECE3A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

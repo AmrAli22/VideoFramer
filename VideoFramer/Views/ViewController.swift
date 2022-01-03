@@ -19,6 +19,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(FrameCell.self, forCellWithReuseIdentifier: "FrameCell")
+
     }
 
     @IBAction func importVedioBtnPressed(_ sender: Any) {
