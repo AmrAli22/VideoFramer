@@ -24,7 +24,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     // MARK: - vedioDurationTimes1
     var imageCount : Int?
     var images = [UIImage]()
-    
+    // MARK: - blurEffectContext
+    var context = CIContext(options: nil)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self

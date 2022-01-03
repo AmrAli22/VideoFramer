@@ -38,10 +38,30 @@ extension ViewController {
         let generator = AVAssetImageGenerator(asset: videoAsset)
         generator.appliesPreferredTrackTransform = true
         generator.generateCGImagesAsynchronously(forTimes: timesArray ) { requestedTime, image, actualTime, result, error in
-            self.images.append(UIImage(cgImage: image!))
+            let OriginalImage = UIImage(cgImage: image!)
+            let BlurredImage  = self.blurEffect(image: OriginalImage)
+            self.images.append(BlurredImage)
             if self.imageCount == self.images.count {
                 completion(true)
             }
         }
     }
+    
+    func blurEffect(image : UIImage) -> UIImage{
+
+        let currentFilter = CIFilter(name: "CIGaussianBlur")
+        let beginImage = CIImage(image: image)
+        currentFilter!.setValue(beginImage, forKey: kCIInputImageKey)
+        currentFilter!.setValue(10, forKey: kCIInputRadiusKey)
+
+        let cropFilter = CIFilter(name: "CICrop")
+        cropFilter!.setValue(currentFilter!.outputImage, forKey: kCIInputImageKey)
+        cropFilter!.setValue(CIVector(cgRect: beginImage!.extent), forKey: "inputRectangle")
+
+        let output = cropFilter!.outputImage
+        let cgimg = context.createCGImage(output!, from: output!.extent)
+        let processedImage = UIImage(cgImage: cgimg!)
+        return processedImage
+    }
+    
 }
